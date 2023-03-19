@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Shooter Game</title>
+  <link rel="manifest" href="/files/manifest.json">
+  <meta name="theme-color" content="#424242">
+  <link type="text/css" rel="stylesheet" href="files/game.css">
+  <meta name="viewport" content="user-scalable=0"/>
+  <link rel="apple-touch-icon" href="files/icons/camera192.png">
+  <script src="files/Game.js" type="text/javascript"></script>
+  <script src="files/Entity.js" type="text/javascript"></script>
+  <script src="files/Character.js" type="text/javascript"></script>
+  <script src="files/Player.js" type="text/javascript"></script>
+  <script src="files/Opponent.js" type="text/javascript"></script>
+  <script src="files/Shot.js" type="text/javascript"></script>
+  <script src="files/main.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <button id="but_install" aria-label="Install" hidden> INSTALAR </button>
+  <button id="pause" class="gamebutton" onclick="this.blur();">Pausa</button>
+  <button id="reset" class="gamebutton" onclick="this.blur();">NUEVA PARTIDA</button>
+  <script>
+    if('serviceWorker' in navigator){
+      window.addEventListener('load',()=>{
+        navigator.serviceWorker.register('service-worker.js').then((reg)=>{
+          console.log("Service worker registered", reg)
+        })
+      })
+    }
+  </script>
+</body>
+
+</html>
